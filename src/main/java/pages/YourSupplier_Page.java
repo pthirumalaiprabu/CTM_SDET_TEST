@@ -52,6 +52,9 @@ public class YourSupplier_Page extends GenericWrapper {
 	@FindBy(how = How.ID, using = "goto-your-supplier-details")
     private WebElement nextButton;
 	
+	@FindBy(how = How.XPATH, using = ".//fieldset[@id='same-supplier-question']")
+    private WebElement sameSupplierQuestionFieldSet;
+	
 	
     /**
      * Constructor which will initialize page factory with the driver and performs basic validation of the page.
@@ -192,9 +195,11 @@ public class YourSupplier_Page extends GenericWrapper {
      */
     public YourSupplier_Page validateSameSupplierQuestion(){
     	
-    	if(!softTextCheck(sameSupplierQuestionText)){
+    	if(getAttribute(sameSupplierQuestionFieldSet, "class").contains("ng-hide")){
     		throw new RuntimeException("Validation Failed. The question : "+sameSupplierQuestionText+" not found on the current page.");
     	}
+    	
+    	
     	return this;
     }
 }

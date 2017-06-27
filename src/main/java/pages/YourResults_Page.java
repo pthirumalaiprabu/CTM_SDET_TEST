@@ -6,6 +6,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.BY_TYPE;
+import utils.PAYMENT_TYPE;
+import utils.TARIFF_TYPE;
 import wrappers.GenericWrapper;
 
 /**
@@ -113,5 +115,98 @@ public class YourResults_Page extends GenericWrapper {
 		return this;
 	}
 	
+	
+	/**
+	 * This method checks if the given payment type is already checked in the filters on the left side of the screen.
+	 * if not checked, it will fail by throwing a runtime exception.
+	 * 
+	 * @param paymentType
+	 * @return
+	 */
+	public YourResults_Page isPaymentTypeFilterCheckedFor(PAYMENT_TYPE paymentType){
+		
+		if(paymentType == PAYMENT_TYPE.ALL_PAYMENT_TYPES){
+			
+			if(!getAttribute(allPaymentTypeFilter, "class").contains("checked")){
+				
+				throw new RuntimeException("All Payment types filter is not checked on the left side filter.");
+				
+			}
+			
+		} else if (paymentType == PAYMENT_TYPE.MONTHLY_DIRECT_DEBIT){
+			
+			if(!getAttribute(monthlyDirectDebitPaymentTypeFilter, "class").contains("checked")){
+				
+				throw new RuntimeException("Monthly direct debit filter is not checked on the left side filter.");
+				
+			}
+			
+		} else if (paymentType == PAYMENT_TYPE.QUATERLY_DIRECT_DEBIT){
+			
+			if(!getAttribute(quarterlyDirectDebitPaymentTypeFilter, "class").contains("checked")){
+				
+				throw new RuntimeException("Quarterly direct debit filter is not checked on the left side filter.");
+				
+			}
+			
+		} else if (paymentType == PAYMENT_TYPE.PAY_ON_RECEIPT_OF_BILL){
+			
+			if(!getAttribute(payOnReceiptPaymentTypeFilter, "class").contains("checked")){
+				
+				throw new RuntimeException("Pay on reciept of bill filter is not checked on the left side filter.");
+				
+			}
+			
+		} else {
+			
+			throw new RuntimeException("The provided payment type does not match for this function.");
+		}
+		
+		return this;
+	}
+	
+	
+	
+	/**
+	 * This method checks if the given tariff type is already checked in the filters on the left side of the screen.
+	 * if not checked, it will fail by throwing a runtime exception.
+	 * 
+	 * @param tariffType
+	 * @return
+	 */
+	public YourResults_Page isTariffTypeFilterCheckedFor(TARIFF_TYPE tariffType){
+		
+		if(tariffType == TARIFF_TYPE.ALL){
+			
+			if(!getAttribute(allTariffTypeFilter, "class").contains("checked")){
+				
+				throw new RuntimeException("All Tariff types filter is not checked on the left side filter.");
+				
+			}
+			
+		} else if (tariffType == TARIFF_TYPE.FIXED){
+			
+			if(!getAttribute(fixedTariffTypeFilter, "class").contains("checked")){
+				
+				throw new RuntimeException("Fixed tariff type filter is not checked on the left side filter.");
+				
+			}
+			
+		} else if (tariffType == TARIFF_TYPE.VARIABLE){
+			
+			if(!getAttribute(variableTariffTypeFilter, "class").contains("checked")){
+				
+				throw new RuntimeException("Variable tariff type filter is not checked on the left side filter.");
+				
+			}
+			
+		} else {
+			
+			throw new RuntimeException("The provided tariff type does not match for this function.");
+		}
+		
+		
+		return this;
+	}
 
 }

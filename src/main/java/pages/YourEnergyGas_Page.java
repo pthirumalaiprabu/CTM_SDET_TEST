@@ -59,6 +59,12 @@ public class YourEnergyGas_Page extends GenericWrapper {
     
     @FindBy(how = How.XPATH, using = ".//table[@id='gas-bill-day_table']/following-sibling::div[1]//button[@class='picker__button--today']")
     private WebElement gasBillDateToday;
+    
+    @FindBy(how = How.ID, using = "gas-current-spend")
+    private WebElement gasCurrentSpendTextBox;
+    
+    @FindBy(how = How.ID, using = "gas-current-spend-period")
+    private WebElement gasCurrentSpendCycyleDropDown;
 	
 	
 	/**
@@ -69,7 +75,7 @@ public class YourEnergyGas_Page extends GenericWrapper {
         
 		PageFactory.initElements(driver, this);
 		
-		if(!(softTextCheck(pageHeader1) && gasTariffDropDown.isDisplayed())){
+		if(!(softTextCheck(pageHeader1))){
 	        throw new RuntimeException("The expected page header : " + pageHeader1 + " or the expected gasTariffDropdown not found on the current page.");
 	    } 
     }
@@ -150,16 +156,19 @@ public class YourEnergyGas_Page extends GenericWrapper {
 		
 		if(energyUsageUnit == ENERGY_USAGE_UNIT.kWH){
 			simpleUserAction(kWhUnitIcon, UA_TYPE.CLICK, null);
-		} else{
+		} else if(energyUsageUnit == ENERGY_USAGE_UNIT.pound) {
 			simpleUserAction(poundUnitIcon, UA_TYPE.CLICK, null);
 		}
 		
 		if(energyUsageUnit == ENERGY_USAGE_UNIT.kWH){
 			simpleUserAction(gasUsageTextBox, UA_TYPE.CLICK_AND_TYPE, usage);
 			simpleUserAction(gasUsageCycleDropDown, UA_TYPE.SELECT_DROPDOWN_OPTION, usageCycle.getVisibleText());
-		} else{
+		} else if(energyUsageUnit == ENERGY_USAGE_UNIT.pound) {
 			simpleUserAction(gasSpendTextBox, UA_TYPE.CLICK_AND_TYPE, usage);
 			simpleUserAction(gasSpendCycleDropDown, UA_TYPE.SELECT_DROPDOWN_OPTION, usageCycle.getVisibleText());
+		}else{
+			simpleUserAction(gasCurrentSpendTextBox, UA_TYPE.CLICK_AND_TYPE, usage);
+			simpleUserAction(gasCurrentSpendCycyleDropDown, UA_TYPE.SELECT_DROPDOWN_OPTION, usageCycle.getVisibleText());
 		}
 	
 		return this;

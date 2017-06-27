@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 		features={"src/test/resources/features"},
 		glue={"steps"},
 		plugin ={"pretty" , "html:src/test/resources/reports"},
-		dryRun = true
+		dryRun = false
 		)
 public class TestRunner {
 

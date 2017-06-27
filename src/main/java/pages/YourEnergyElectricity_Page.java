@@ -23,7 +23,6 @@ import wrappers.GenericWrapper;
 public class YourEnergyElectricity_Page extends GenericWrapper {
 	
 	private String pageHeader1 = "Your Energy";
-	private String pageHeader2 = "Electricity";
 	private String haveEconomy7MeterOptionGenericXPath = ".//input[@id='economy-7-#CAPTION#']/following-sibling::span[1]";
 	private String isElectricityMainSourceOptionGenericXPath = ".//input[@id='electricity-main-heating-#CAPTION#']/following-sibling::span[1]";
 	
@@ -66,6 +65,12 @@ public class YourEnergyElectricity_Page extends GenericWrapper {
     
     @FindBy(how = How.ID, using = "goto-your-energy")
     private WebElement nextButton;
+    
+    @FindBy(how = How.ID, using = "electricity-current-spend")
+    private WebElement electriciyCurrentSpendTextBox;
+    
+    @FindBy(how = How.ID, using = "electricity-current-spend-period")
+    private WebElement electriciyCurrentSpendCycleDropDown;
 	
 
 	
@@ -77,8 +82,8 @@ public class YourEnergyElectricity_Page extends GenericWrapper {
         
 		PageFactory.initElements(driver, this);
 		
-        if(!(softTextCheck(pageHeader1) && softTextCheck(pageHeader2))){
-        	throw new RuntimeException("The expected page header : " + pageHeader1 + " or " + pageHeader2 + " not found on the current page.");
+        if(!(softTextCheck(pageHeader1))){
+        	throw new RuntimeException("The expected page header : " + pageHeader1 + " not found on the current page.");
         } 
     }
 	
@@ -178,16 +183,19 @@ public class YourEnergyElectricity_Page extends GenericWrapper {
 		
 		if(energyUsageUnit == ENERGY_USAGE_UNIT.kWH){
 			simpleUserAction(kWhUnitIcon, UA_TYPE.CLICK, null);
-		} else{
+		} else if(energyUsageUnit == ENERGY_USAGE_UNIT.pound){
 			simpleUserAction(poundUnitIcon, UA_TYPE.CLICK, null);
 		}
 		
 		if(energyUsageUnit == ENERGY_USAGE_UNIT.kWH){
 			simpleUserAction(generalElectriciyUsageTextBox, UA_TYPE.CLICK_AND_TYPE, usage);
 			simpleUserAction(generalElectriciyUsageCycleDropDown, UA_TYPE.SELECT_DROPDOWN_OPTION, usageCycle.getVisibleText());
-		} else{
+		} else if(energyUsageUnit == ENERGY_USAGE_UNIT.pound){
 			simpleUserAction(generalElectriciySpendTextBox, UA_TYPE.CLICK_AND_TYPE, usage);
 			simpleUserAction(generalElectriciySpendCycleDropDown, UA_TYPE.SELECT_DROPDOWN_OPTION, usageCycle.getVisibleText());
+		} else{
+			simpleUserAction(electriciyCurrentSpendTextBox, UA_TYPE.CLICK_AND_TYPE, usage);
+			simpleUserAction(electriciyCurrentSpendCycleDropDown, UA_TYPE.SELECT_DROPDOWN_OPTION, usageCycle.getVisibleText());
 		}
 	
 		return this;

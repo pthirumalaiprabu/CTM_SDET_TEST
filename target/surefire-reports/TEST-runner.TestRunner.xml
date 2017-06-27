@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="38" failures="0" name="runner.TestRunner" time="3.723" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
+    <property name="java.vm.version" value="25.111-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\DELL\Downloads\ctm-sdet-test"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\DELL\Downloads\ctm-sdet-test"/>
+    <property name="java.runtime.version" value="1.8.0_111-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\DELL\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\apache-maven-3.5.0\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;&quot;C:\Program Files\Java\jdk1.8.0_111\bin&quot;; C:\apache-maven-3.5.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\apache-maven-3.5.0\bin;C:\Program Files\Java\jdk1.8.0_111\bin;;."/>
+    <property name="maven.conf" value="C:\apache-maven-3.5.0\bin\../conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="library.jansi.path" value="C:\apache-maven-3.5.0\bin\..\lib\jansi-native\windows64"/>
+    <property name="user.home" value="C:\Users\DELL"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="DELL"/>
+    <property name="java.class.path" value="C:\apache-maven-3.5.0\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_111"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\classes"/>
+    <property name="sun.stderr.encoding" value="cp437"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\apache-maven-3.5.0\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.stdout.encoding" value="cp437"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="Given I am a &quot;Gas &amp; Electricity&quot; customer &quot;with&quot; bill from postcode &quot;PE26YS&quot;" time="0.002"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="Then I should be asked whether my suppliers are same" time="0.002"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="When My Gas &amp; Electricity suppliers are &quot;different&quot;" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="And My Electricity supplier is &quot;British&quot;" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="And My Gas supplier is &quot;SSE&quot;" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="When I move to the next page and I &quot;have&quot; a economy7 meter and My current electricity usage is in &quot;kWh&quot;" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="Then I should be able to see day and night fields related to economy7" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="When I leave one of the usage field empty and click Next" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="Then I should see error message &quot;Complete this section to continue&quot;" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="When I enter the day and night usage in annual cycle and move to the next page and enter the gas usage in pound on a monthly cycle" time="0.001"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="Then I should be asked to select bill date" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="When I provide today as bill date and move to the next page and I am interested in All tariffs and All payment types" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="And I enter my email id" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="And I agree to marketing information via email" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="And I agree to the terms and conditions" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="And I click GoToPrices" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="Then I should be able to see All Payment types and All tariff types in my results page" time="0"/>
+  <testcase classname="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" name="Scenario: Test All Payment and All Tariff types comparison for both Electriciy and Gas with Bill" time="2.569"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="Given I am a &quot;Electricity only&quot; customer &quot;without&quot; bill from postcode &quot;PE26YS&quot;" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="And My Electricity supplier is &quot;Scottish&quot;" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="When I move to the next page and I &quot;have&quot; a economy7 meter and My electricity expense is &quot;200&quot; pounds monthly and click Next" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="When I am interested in Variable tariffs and Monthly direct debit" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="And I enter my email id" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="And I agree to marketing information via email" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="And I agree to the terms and conditions" time="0.001"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="And I click GoToPrices" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="Then I should be able to see Monthly direct debit payment types and Variable tariff types in my results page" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" name="Scenario: Test Variable tariff and Monthly direct debit types comparison for Electricity only without Bill" time="0.649"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="Given I am a &quot;Gas only&quot; customer &quot;without&quot; bill from postcode &quot;PE26YS&quot;" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="And My Gas supplier is &quot;EDF&quot;" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="When I move to the next page and My gas expense is &quot;200&quot; pounds monthly and click Next" time="0.002"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="When I am interested in Variable tariffs and Monthly direct debit" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="And I enter my email id" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="And I agree to marketing information via email" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="And I agree to the terms and conditions" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="And I click GoToPrices" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="Then I should be able to see Monthly direct debit payment types and Variable tariff types in my results page" time="0"/>
+  <testcase classname="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" name="Scenario: Test Variable tariff and Monthly direct debit types comparison for Gas only without Bill" time="0.497"/>
+</testsuite>

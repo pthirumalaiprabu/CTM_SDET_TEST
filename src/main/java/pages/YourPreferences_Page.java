@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import utils.BY_TYPE;
 import utils.PAYMENT_TYPE;
+import utils.TARIFF_TYPE;
 import utils.UA_TYPE;
 import wrappers.GenericWrapper;
 
@@ -55,6 +58,11 @@ public class YourPreferences_Page extends GenericWrapper {
 	@FindBy(how = How.ID, using = "email-submit")
     private WebElement goToPricesButton;
 	
+	@FindBy(how = How.XPATH, using = ".//*[text()[contains(.,'please show me the tariffs I can switch to now through')]]/span")
+    private WebElement refineResultsNoCheckboxOption;
+	
+	@FindBy(how = How.XPATH, using = ".//*[text()[contains(.,'please show me all tariffs including those that aren’t available through')]]/span")
+    private WebElement refineResultsYesCheckboxOption;
 	
 	
 	/**
@@ -78,13 +86,13 @@ public class YourPreferences_Page extends GenericWrapper {
 	 * @param tariffPreference
 	 * @return
 	 */
-	public YourPreferences_Page setTariffPreferece(String tariffPreference){
+	public YourPreferences_Page setTariffPreferece(TARIFF_TYPE tariffType){
 		
-		if(tariffPreference.toLowerCase().contains("fixed")){
+		if(tariffType == TARIFF_TYPE.FIXED){
 			simpleUserAction(fixedTariffIcon, UA_TYPE.CLICK, null);
-		} else if(tariffPreference.toLowerCase().contains("variable")){
+		} else if(tariffType == TARIFF_TYPE.VARIABLE){
 			simpleUserAction(variableTariffIcon, UA_TYPE.CLICK, null);
-		} else if(tariffPreference.toLowerCase().contains("all")){
+		} else if(tariffType == TARIFF_TYPE.ALL){
 			simpleUserAction(allTariffsIcon, UA_TYPE.CLICK, null);
 		}
 		
@@ -202,6 +210,31 @@ public class YourPreferences_Page extends GenericWrapper {
 		
 		simpleUserAction(goToPricesButton, UA_TYPE.CLICK, null);
 		return new YourResults_Page();
+	}
+	
+	
+	
+	/**
+	 * This method checks the option for refining results.
+	 * if true is passed, it will check Yes
+	 * else it will check No
+	 * 
+	 * @param option
+	 * @return
+	 */
+	public YourPreferences_Page likeToRefineResults(boolean option){
+		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		if(option){
+			simpleUserAction(refineResultsYesCheckboxOption, UA_TYPE.CLICK, null);
+		} else{
+			simpleUserAction(refineResultsNoCheckboxOption, UA_TYPE.CLICK, null);
+		}
+		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	
+		return this;
 	}
 
 }
